@@ -10,6 +10,10 @@ on:
     branches: [main]
   workflow_dispatch:
 
+env:
+  NODE_ENV: test
+  LOG_LEVEL: debug
+
 jobs:
   build-and-test:
     name: Build and Test
@@ -64,6 +68,11 @@ jobs:
           else
             echo "⚠️ No coverage report found"
           fi
+
+      - name: Print environment variables
+        run: |
+          echo "Environment: ${{ env.NODE_ENV }}"
+          echo "Log Level: ${{ env.LOG_LEVEL }}"
 
   lint-check:
     name: Lint Check
