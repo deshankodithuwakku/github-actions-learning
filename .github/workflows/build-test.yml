@@ -31,8 +31,8 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
-          cache: 'npm'
-          cache-dependency-path: 'sample-app/package-lock.json'
+         # cache: 'npm'
+         # cache-dependency-path: 'sample-app/package-lock.json'
       
       - name: Install dependencies
         working-directory: ./sample-app
@@ -84,8 +84,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '18'
-          cache: 'npm'
-          cache-dependency-path: 'sample-app/package-lock.json'
+         # cache: 'npm'
+         # cache-dependency-path: 'sample-app/package-lock.json'
       
       - working-directory: ./sample-app
         run: npm ci
