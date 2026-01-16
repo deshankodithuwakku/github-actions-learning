@@ -31,6 +31,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
+          cache-dependency-path: sample-app/package-lock.json
 
       - name: Print environment variable
         run: echo "MY_ENV_VAR is $MY_ENV_VAR"
@@ -85,6 +86,7 @@ jobs:
         with:
           node-version: '18'
           cache: 'npm'
+          cache-dependency-path: sample-app/package-lock.json
 
       - name: Install dependencies
         working-directory: ./sample-app
